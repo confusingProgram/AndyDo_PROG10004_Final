@@ -1,10 +1,10 @@
 class Product:
-    def __init__(self, product_code, name, category, quantity, unit_price):
+    def __init__(self, product_code, name, category, unit_price, quantity):
         self._product_code = product_code
         self._name = name
         self._category = category
-        self._quantity = int(quantity)
         self._unit_price = float(unit_price)
+        self._quantity = int(quantity)
     
     def get_product_code(self):
         return self._product_code
@@ -27,7 +27,7 @@ class Product:
         return total
     
     def __str__(self):
-        
+        return f"{self._product_code}, {self._name}, {self._category}, {self.net_price()}"
         #230, Dell, Computer, 7661.25
         pass
 
