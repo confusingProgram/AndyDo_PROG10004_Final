@@ -9,6 +9,18 @@ class Product:
     def get_product_code(self):
         return self._product_code
     
+    def get_name(self):
+        return self._name
+    
+    def get_category(self):
+        return self._category
+    
+    def get_unit_price(self):
+        return self._unit_price
+    
+    def get_quantity(self):
+        return self._quantity
+    
     def set_category(self, new_cat):
         try:
             if new_cat == "":
@@ -24,6 +36,9 @@ class Product:
     def net_price(self):
         sub_total = self._unit_price*self._quantity
         total = sub_total * 1.135
+        total = total * 100
+        total = total // 1
+        total = total / 100
         return total
     
     def __str__(self):
